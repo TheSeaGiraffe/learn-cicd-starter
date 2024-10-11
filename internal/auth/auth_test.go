@@ -13,8 +13,7 @@ func TestGetAPIKey_validation(t *testing.T) {
 		want        string
 	}{
 		{"no auth header", "Poodonkis", "Bearer 00000", ErrNoAuthHeaderIncluded.Error()},
-		// {"malformed auth header", "Authorization", "Bearer 00000", "malformed authorization header"},
-		{"malformed auth header", "Authorization", "ApiKey 00000", "malformed authorization header"},
+		{"malformed auth header", "Authorization", "Bearer 00000", "malformed authorization header"},
 	}
 
 	for _, tt := range tests {
@@ -41,8 +40,7 @@ func TestGetAPIKey_checkWorking(t *testing.T) {
 		headerValue string
 		want        string
 	}{
-		// {"valid header with key", "Authorization", "ApiKey 00000", "00000"},
-		{"valid header with key", "Authorization", "ApiKey 11111", "00000"},
+		{"valid header with key", "Authorization", "ApiKey 00000", "00000"},
 	}
 
 	for _, tt := range tests {
