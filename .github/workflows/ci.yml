@@ -33,5 +33,11 @@ jobs:
         with:
           go-version: "1.23.0"
 
-      - name: Format code
+      - name: Check formatting
         run: test -z $(go fmt ./...)
+
+      - name: Lint code
+        uses: dominikh/staticcheck-action@v1
+        with:
+          version: "latest"
+          install-go: false
