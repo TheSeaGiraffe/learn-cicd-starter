@@ -5,6 +5,13 @@
 This is a fork of the repo containing the starter code for the "Notely" application for the "Learn CICD" course on [Boot.dev](https://boot.dev).
 It will be added to periodically as I progress through the course.
 
+## List of updates
+
+- Added GitHub actions that trigger on pull request. The current actions are:
+  - Running tests
+  - Formatting code
+- Added tests for the `GetAPIKey` function in the `auth` package
+
 ## Local Development
 
 Make sure you're on Go version 1.22+.
